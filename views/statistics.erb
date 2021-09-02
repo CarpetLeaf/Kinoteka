@@ -1,0 +1,45 @@
+<div class="grid-x grid-margin-x">
+    <h3>Статистика</h3>
+</div>
+<div class="large-12 cell">
+    <a class="button" href="/films">Вернуться к списку фильмов</a>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <%for month in 1..12%>
+                    <%if @info[month-1].max > 0%>
+                        <%d = Date.new(2000, month, 1)%>
+                        <th><%=d.strftime('%b')%></th>
+                    <%end%>
+                <%end%>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Количество отзывов</td>
+                 <%for month in 1..12%>
+                    <%if @info[month-1].max > 0%>
+                        <td><%=@info[month-1][0]%></td>
+                    <%end%>
+                <%end%>
+            </tr>
+            <tr>
+                <td>Количество отрецензированных фильмов</td>
+                <%for month in 1..12%>
+                    <%if @info[month-1].max > 0%>
+                        <td><%=@info[month-1][1]%></td>
+                    <%end%>
+                <%end%>
+            </tr>
+            <tr>
+                <td>Количество уникальных пользователей, которые оценивали или рецензировали фильмы</td>
+                <%for month in 1..12%>
+                    <%if @info[month-1].max > 0%>
+                        <td><%=@info[month-1][2]%></td>
+                    <%end%>
+                <%end%>
+            </tr>
+        </tbody>
+    </table>
+</div>

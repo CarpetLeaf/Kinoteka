@@ -1,0 +1,18 @@
+<div class="grid-x grid-margin-x">
+    <h3>Удалеине фильма</h3>
+    <div class="cell large-12">
+        Вы действительно хотите удалить фильм: "<%=@cinema.name%>?"
+    </div>
+</div>
+
+<% form({method: :post}, {obj: @parameters}) do |f|%>
+  <div class="grid-x margin-x">
+    <div class="large-12 cell">
+        <%=f.input(:confirmation, type: :checkbox, label: 'Я подтверждаю')%>
+    </div>
+    <div class="large-12 cell">
+        <%=f.button(value: "Удалить", class: 'button warning')%>
+        <a href="/films/delete_cinema_list" class="button secondary">Отмена</a>
+    </div>
+  </div>
+<%end%>

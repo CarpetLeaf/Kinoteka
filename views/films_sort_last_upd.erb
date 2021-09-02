@@ -1,0 +1,10 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h3>Список фильмов</h3>
+  </div>
+  <%@films.each do |cinema|%>
+    <%cinema.reviews = cinema.reviews.sort_by{|rev| rev.date}.reverse.to_h%>
+    <%p cinema.reviews.first%>
+  <%end%>
+  <%= render('_films_form', locals: {action: "", text: 'Информация о фильме', films_set: @films.sort_by{|x| x.reviews.first[1].date}})%>
+</div>

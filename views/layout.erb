@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js" lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 4</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell" style = "text-align: center">          
+          <a href="/films"><h2>Кинотека</h2></a>
+          <ul class="menu dropdown align-center">
+            <li><a href="/films/new">Добавить фильм</a></li>
+            <li><a href="/films/delete_cinema_list">Удалить фильм</a></li>
+            <li><a href="/films/edit_cinema_list">Изменить фильм</a></li>
+            <li><a href="/films/top_list">Самые активные пользователи</a></li>
+            <li><a href="/films/statistics">Статистика</a></li>
+            <li><a href="/films">Отсортировать по алфавиту</a></li>
+            <li><a href="/films/films_sort_mark">Отсортировать по средней оценке</a></li>
+            <li><a href="/films/films_sort_rev_cnt">Отсортировать по количеству отзывов</a></li>
+            <li><a href="/films/films_sort_last_upd">Отсортировать по дате последнего отзыва</a></li>
+          </ul>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+:cinema_list:
+- :id: 1
+  :name: Фильм 1
+  :year: 1990
+  :genre: Боевик
+  :duration: 120
+  :description: Хорший фильм
+- :id: 2
+  :name: Фильм 2
+  :year: 2000
+  :genre: Вестерн
+  :duration: 60
+  :description: Средний фильм
+- :id: 3
+  :name: Фильм 3
+  :year: 2020
+  :genre: Комедия
+  :duration: 115
+  :description: скучный фильм

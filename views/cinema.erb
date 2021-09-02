@@ -1,0 +1,40 @@
+<div class="grid-x">
+  <div class="cell large-12">
+    <h3>Информация о фильме</h3>
+
+    <p>Название: <%= @cinema.name %></p>
+    <p>Год выхода: <%= @cinema.year %></p>
+    <p>Жанр: <%= @cinema.genre %></p>
+    <p>Продолжиельность: <%= @cinema.duration %></p>
+    <p>
+        <%unless @cinema.mark%>
+            Оценок на отот фильм пока нет
+        <%else%>
+            Оценка: <%=@cinema.mark.round(2)%>
+        <%end%>
+    </p>
+    <p>Описание: <%= @cinema.description %></p>
+    <a class="button" href="/films">Вернуться к списку фильмов</a>
+    <a class="button" href="/films/<%=@cinema.id%>/add_review">Оставить отзыв</a>
+    <a class="button" href="/films/<%=@cinema.id%>/edit_review_list">Редактировать отзыв</a>
+    <a class="button" href="/films/<%=@cinema.id%>/delete_review_list">Удалить отзыв</a>
+    <%if @cinema.reviews%>
+        <% @cinema.reviews.sort_by{|_key, x| [x.mark.to_i, x.date]}.reverse.each do |_key, rev|%>
+            <div class="card cell large-12">
+                <div class="card-divider" >
+                    <%= rev.name %>          
+                </div>
+                <div class="card-divider">
+                    <%= rev.date %>
+                </div>
+                <div class="card-section">
+                    <%if rev.mark != nil%>
+                        <p>Оценка: <%=rev.mark%>/10</p>  
+                    <%end%>
+                    <p><%=rev.description%></p>
+                </div>
+        </div>
+        <%end%>
+    <%end%>
+  </div>
+</div>

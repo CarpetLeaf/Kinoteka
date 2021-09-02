@@ -1,0 +1,7 @@
+<div class="grid-x grid-margin-x">
+  <div class="cell large-12">
+    <h3>Выберете фильм, который вы хотите изменить</h3>
+  </div>
+
+  <%= render('_films_form', locals: {action: '/edit', text: 'Изменить фильм', films_set: @films.sort_by{|x| x.name}})%>
+</div>

@@ -1,0 +1,25 @@
+<div class="grid-x grid-margin-x">
+    <h2>Выберите отзыв для <%=operation_txt%></h2>
+</div>
+<div class="large-12 cell">
+    <a class="button secondary" href="/films/<%=@cinema.id%>">Отмена</a>
+    <%@cinema.reviews.each do |_key, rev|%>
+        <div class="card cell large-12">
+            <div class="card-divider" >
+                <%= rev.name %>          
+            </div>
+            <div class="card-divider">
+                <%= rev.date %>
+            </div>
+            <div class="card-section">
+                <%if rev.mark != nil%>
+                    <p>Оценка: <%=rev.mark%>/10</p>  
+                <%end%>
+                <p><%=rev.description%></p>
+                <p>
+                    <a class="button" href = "/films/<%=@cinema.id%>/<%=path%>/<%=rev.name%>">Выбрать</a>
+                <p>
+            </div> 
+        </div>  
+    <%end%> 
+</div>

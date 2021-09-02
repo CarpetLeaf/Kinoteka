@@ -1,0 +1,19 @@
+ <% if @films.size == 0 %>
+    <div class="cell large-12 callout warning">
+      В приложении нет информации о фильмах
+    </div>
+  <% else%>
+    <% films_set.each do |cinema| %>
+      <div class="card cell large-4">
+        <div class="card-divider">
+          <%= cinema.name %>
+        </div>
+        <div class="card-section">
+          <p><%= cinema.year %></p>
+          <p>
+            <a class="button" href = "/films/<%=cinema.id%><%=action%>"><%=text%></a>
+          <p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
